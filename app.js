@@ -228,28 +228,25 @@ app.get('/add-projects', isAdmin, (req, res) => {
     res.render('add-project.ejs', { title: 'Add Projects' });
 });
 
-//  POST projects handler
+// POST /add-project handler
 app.post('/add-project', isAdmin, (req, res) => {
+    const { name, description, languages, tag, github, runlink } = req.body;
 
-    // console.log("Request Body:", req.body);
-    // Request Body: {
-    //   name: 'SYMON SAYS GAME',
-    //   description: 'A SYMON SAYS GAME With Four Colors To Increase The Mind Concentration...',
-    //   languages: 'Html,Css,Js',
-    //   tag: 'Mini',
-    //   github: 'https://github.com/MR-PRANAV/SYMON-SAYS-GAME',
-    //   runlink: 'https://mr-pranav.github.io/SYMON-SAYS-GAME/'
-    // }
+    // Build project data with required fields
+    const projectData = {
+        name,
+        description,
+        languages: languages.split(','),
+        tag,
+        githubLink: github
+    };
 
+    // Only include runLink if it was submitted
+    if (runlink && runlink.trim() !== '') {
+        projectData.runLink = runlink;
+    }
 
-    const newProject = new Project({
-        name: req.body.name,
-        description: req.body.description,
-        languages: req.body.languages.split(','),
-        tag: req.body.tag,
-        githubLink: req.body.github,
-        runLink: req.body.runlink
-    });
+    const newProject = new Project(projectData);
 
     newProject.save()
         .then(() => {

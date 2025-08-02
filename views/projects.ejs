@@ -35,9 +35,12 @@
             <a href="<%= project.githubLink %>" target="_blank" class="text-blue-600 hover:underline font-medium">
               🔗 GitHub
             </a>
-            <a href="<%= project.runLink %>" target="_blank" class="text-green-600 hover:underline font-medium">
-              🚀 Live Demo
-            </a>
+
+            <% if (project.runLink) { %>
+                <a href="<%= project.runLink %>" target="_blank" class="text-green-600 hover:underline font-medium">
+                  🚀 Live Demo
+                </a>
+            <% } %>
           </div>
         </div>
         <br>

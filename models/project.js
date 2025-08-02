@@ -29,7 +29,8 @@ const projectSchema = new mongoose.Schema({
   },
   runLink: {
     type: String,
-    required: true,
+    required: false, // Optional field
+    default: "",
     trim: true
   }
 });
