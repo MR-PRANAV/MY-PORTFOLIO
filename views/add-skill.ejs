@@ -1,0 +1,131 @@
+<% layout("/layouts/boilerplate") %>
+
+  <section class="min-h-screen bg-gray-100 py-12 px-4">
+  
+    <div class="admin-panel w-full max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-2xl border border-gray-200">
+      <h1 class="text-3xl font-bold text-gray-800 mb-4">Add Skills</h1>
+      <p class="text-gray-600 mb-6">Use the form below to add new skills to your portfolio...</p>
+
+      <form action="/add-skills" method="POST" class="space-y-6" novalidate @submit.prevent="validateAndSubmit"
+        x-data="formHandler()">
+
+        <!-- Skill Name -->
+        <div>
+          <label for="skill" class="block text-sm font-medium text-gray-700 mb-1">Skill Name</label>
+          <input x-model="skill" type="text" id="skill" name="skill" placeholder="e.g., Java"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300"
+            required />
+          <p x-show="errors.skill" class="text-red-600 text-sm mt-1" x-text="errors.skill"></p>
+        </div>
+
+        <!-- Skill Points (One by One) -->
+        <div class="mb-6">
+          <label for="pointInput" class="block text-sm font-medium text-gray-700 mb-1">Skill Points</label>
+
+          <div class="flex gap-2 mb-2">
+            <input x-model="newPoint" id="pointInput" type="text"
+              placeholder="e.g. Flowcharts & Pseudocodes, Variables & Data Types..."
+              class="flex-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300"
+              @keydown.enter.prevent="addPoint" />
+            <button type="button" @click="addPoint"
+              class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+              Add
+            </button>
+          </div>
+
+          <ul class="list-disc pl-5 space-y-1 mb-2 text-gray-700">
+            <template x-for="(point, index) in points" :key="index">
+              <li class="flex justify-between items-center">
+                <span x-text="point"></span>
+                <button type="button" @click="removePoint(index)"
+                  class="text-red-500 hover:text-red-700 text-xs ml-2">✖</button>
+              </li>
+              <hr class="pointshr border-gray-300 my-1" />
+            </template>
+
+          </ul>
+
+          <input type="hidden" name="points" :value="points.join(',')" />
+          <!-- <p class="text-xs text-gray-500">Add at least one point before submitting.</p> -->
+          <p x-show="errors.points" class="text-red-600 text-sm mt-1" x-text="errors.points"></p>
+        </div>
+
+        <!-- Tag Radio -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Tag</label>
+          <div class="flex gap-6">
+            <label class="inline-flex items-center cursor-pointer">
+              <input type="radio" x-model="tag" name="tag" value="core" class="form-radio text-blue-600" required />
+              <span class="ml-2 text-gray-700">Core</span>
+            </label>
+            <label class="inline-flex items-center cursor-pointer ">
+              <input type="radio" x-model="tag" name="tag" value="soft" class="form-radio text-blue-600" />
+              <span class="ml-2 text-gray-700">Soft</span>
+            </label>
+          </div>
+          <p x-show="errors.tag" class="text-red-600 text-sm mt-1" x-text="errors.tag"></p>
+        </div>
+
+        <!-- Submit -->
+        <div>
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+            ➕ Add Skill
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <style>
+    .pointshr {
+      height: 1px;
+      width: 100%;
+      background-color: #e5e7eb;
+      /* Tailwind's gray-300 */
+    }
+  </style>
+
+
+
+  <!-- Alpine.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <!-- Alpine.js Validation Script -->
+  <script>
+    const pointInput = document.getElementById('pointInput');
+    // console.log(pointInput);
+    function formHandler() {
+      return {
+        skill: '',
+        newPoint: '',
+        points: [],
+        tag: '',
+        errors: {},
+
+        addPoint() {
+          if (this.newPoint.trim() !== '') {
+            this.points.push(this.newPoint.trim());
+            this.newPoint = '';
+            pointInput.focus(); // Focus back on the input after adding
+          }
+        },
+        removePoint(index) {
+          this.points.splice(index, 1);
+        },
+
+        validateAndSubmit() {
+          this.errors = {};
+
+          if (!this.skill.trim()) this.errors.skill = "Skill name is required.";
+          if (this.points.length === 0) this.errors.points = "At least one point is required.";
+          if (!this.tag) this.errors.tag = "Please select a tag.";
+
+          if (Object.keys(this.errors).length === 0) {
+            document.querySelector('form').submit();
+            // submit if no errors
+          }
+        }
+      }
+    }
+  </script>

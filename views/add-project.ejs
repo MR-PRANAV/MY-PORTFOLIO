@@ -1,0 +1,152 @@
+<% layout("/layouts/boilerplate") %>
+
+<section class="min-h-screen bg-gray-100 py-12 px-4">
+  <div class="admin-panel w-full max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-2xl border border-gray-200">
+    <h1 class="text-3xl font-bold text-gray-800 mb-4">Add Project</h1>
+    <p class="text-gray-600 mb-6">Fill in the details below to add a new project to your portfolio...</p>
+
+    <form action="/add-project" method="POST" class="space-y-6" novalidate @submit.prevent="validateAndSubmit" x-data="formHandler()">
+
+      <!-- Project Name -->
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Project Name</label>
+        <input x-model="name" type="text" id="name" name="name" placeholder="e.g., TO-DO APP"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300" required />
+        <p x-show="errors.name" class="text-red-600 text-sm mt-1" x-text="errors.name"></p>
+      </div>
+
+      <!-- Description -->
+      <div>
+        <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+        <textarea x-model="description" id="description" name="description" rows="4"
+          placeholder="Brief project overview..."
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300"
+          required></textarea>
+        <p x-show="errors.description" class="text-red-600 text-sm mt-1" x-text="errors.description"></p>
+      </div>
+
+      <!-- Languages (One by One) -->
+      <div class="mb-6">
+        <label for="langInput" class="block text-sm font-medium text-gray-700 mb-1">Languages Used</label>
+
+        <div class="flex gap-2 mb-2">
+          <input x-model="newLanguage" id="langInput" type="text" placeholder="e.g. HTML/CSS/JavaScript"
+            class="flex-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300"
+            @keydown.enter.prevent="addLanguage" />
+          <button type="button" @click="addLanguage"
+            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+            Add
+          </button>
+        </div>
+
+        <ul class="list-disc pl-5 space-y-1 mb-2 text-gray-700">
+          <template x-for="(lang, index) in languages" :key="index">
+            <li class="flex justify-between items-center">
+              <span x-text="lang"></span>
+              <button type="button" @click="removeLanguage(index)"
+                class="text-red-500 hover:text-red-700 text-xs ml-2">✖</button>
+            </li>
+            <hr class="pointshr border-gray-300 my-1" />
+          </template>
+        </ul>
+
+        <input type="hidden" name="languages" :value="languages.join(',')" />
+        <p x-show="errors.languages" class="text-red-600 text-sm mt-1" x-text="errors.languages"></p>
+      </div>
+
+      <!-- Tag -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Tag</label>
+        <div class="flex gap-6">
+          <label class="inline-flex items-center cursor-pointer">
+            <input type="radio" x-model="tag" name="tag" value="Grand" class="form-radio text-blue-600" required />
+            <span class="ml-2 text-gray-700">Grand</span>
+          </label>
+          <label class="inline-flex items-center cursor-pointer">
+            <input type="radio" x-model="tag" name="tag" value="Mini" class="form-radio text-blue-600" />
+            <span class="ml-2 text-gray-700">Mini</span>
+          </label>
+        </div>
+        <p x-show="errors.tag" class="text-red-600 text-sm mt-1" x-text="errors.tag"></p>
+      </div>
+
+      <!-- GitHub Link -->
+      <div>
+        <label for="github" class="block text-sm font-medium text-gray-700 mb-1">GitHub Link</label>
+        <input x-model="github" type="url" id="github" name="github"
+          placeholder="e.g. https://github.com/username/project-name"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300"
+          required />
+        <p x-show="errors.github" class="text-red-600 text-sm mt-1" x-text="errors.github"></p>
+      </div>
+
+      <!-- Live Link -->
+      <div>
+        <label for="runlink" class="block text-sm font-medium text-gray-700 mb-1">Project Live Link</label>
+        <input x-model="runlink" type="url" id="runlink" name="runlink" placeholder="e.g. https://projectdomain.com"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-300"
+          required />
+        <p x-show="errors.runlink" class="text-red-600 text-sm mt-1" x-text="errors.runlink"></p>
+      </div>
+
+      <!-- Submit -->
+      <div>
+        <button type="submit"
+          class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+          ➕ Add Project
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<style>
+  .pointshr {
+    height: 1px;
+    width: 100%;
+    background-color: #e5e7eb;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<script>
+  const langInput = document.getElementById('langInput');
+  function formHandler() {
+    return {
+      name: '',
+      description: '',
+      newLanguage: '',
+      languages: [],
+      tag: '',
+      github: '',
+      runlink: '',
+      errors: {},
+
+      addLanguage() {
+        if (this.newLanguage.trim() !== '') {
+          this.languages.push(this.newLanguage.trim());
+          this.newLanguage = '';
+          langInput.focus();
+        }
+      },
+      removeLanguage(index) {
+        this.languages.splice(index, 1);
+      },
+
+      validateAndSubmit() {
+        this.errors = {};
+        if (!this.name.trim()) this.errors.name = "Project name is required.";
+        if (!this.description.trim()) this.errors.description = "Description is required.";
+        if (this.languages.length === 0) this.errors.languages = "At least one language is required.";
+        if (!this.tag) this.errors.tag = "Please select a tag.";
+        if (!this.github.trim()) this.errors.github = "GitHub link is required.";
+        // if (!this.runlink.trim()) this.errors.runlink = "Live project link is required.";
+
+        if (Object.keys(this.errors).length === 0) {
+          document.querySelector('form').submit();
+        }
+      }
+    }
+  }
+</script>

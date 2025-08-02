@@ -1,0 +1,81 @@
+<footer class="bg-white border-t border-gray-200 mt-16">
+  <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+
+    <!-- Links Section (Optional) -->
+    <div class="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-6 mb-4 text-sm text-gray-600">
+      <a href="/" class="hover:text-indigo-600 transition">Home</a>
+      <a href="/#about" class="hover:text-indigo-600 transition">About</a>
+      <a href="/projects" class="hover:text-indigo-600 transition">Projects</a>
+      <a href="/skills" class="hover:text-indigo-600 transition">Skills</a>
+      <a href="/contact" class="hover:text-indigo-600 transition">Contact</a>
+      <a href="/login" class="hover:text-indigo-600 transition">Admin Login</a>
+    </div>
+
+
+    <!-- Divider -->
+    <div class="border-t border-gray-100 my-4"></div>
+
+    <!-- Social Links Section -->
+      <section id="social-links" class="social-section">
+                <div class="social-container">
+                    <a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3Bf43k%2BrPAT0u449Mjpti9eQ%3D%3D"
+                    target="_blank" class="social-link">
+                    LinkedIn
+                    </a>
+
+                    <a href="https://github.com/MR-PRANAV" target="_blank" class="social-link">
+                    GitHub
+                    </a>
+
+                    <a href="https://www.instagram.com/_mr_pranav____/" target="_blank" class="social-link">
+                    Instagram
+                    </a>
+                </div>
+        </section>
+
+    <style>
+        /* Social Links Section */
+.social-section {
+    padding: 3rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #3f51b5;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #3f51b5;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #3f51b5;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+
+    <!-- Copyright -->
+    <p class="text-center text-gray-500 text-sm">
+      &copy; <span id="year"></span> Pranav.Dev. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<!-- Script to auto-update year -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
