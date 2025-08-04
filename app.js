@@ -269,27 +269,6 @@ app.get('/add-experience', isAdmin, (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // Error handling middleware
 // // 404 handler
 // app.use((req, res, next) => {
