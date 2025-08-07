@@ -1,7 +1,5 @@
 <% layout("/layouts/boilerplate") %>
 
-
-
   <!-- Home Page hero section S-->
   <div id="vanta-bg" class="min-h-screen flex items-center justify-center">
 
@@ -20,8 +18,7 @@
           class="px-6 py-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition duration-300">
           About Me
         </a>
-        <a href="\DOC\PRANAV-S-P-RESUME-102.pdf"
-        download 
+        <a href="\DOC\PRANAV-S-P-RESUME-102.pdf" download
           class="px-6 py-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition duration-300">
           Resume
         </a>
@@ -39,10 +36,11 @@
   </div>
 
   <style>
-    .min-h-screen{
+    .min-h-screen {
       user-select: none;
     }
-.home-page div a{
+
+    .home-page div a {
       margin: 0px 0px 0px 10px;
     }
 
@@ -153,183 +151,185 @@
 
 
   <!-- Home Page About section S-->
-<section id="about">
-  <br><br><br><br>
-  <div class="about-container">
-    <div>
-      <!-- Profile Image -->
-    <div class="about-img">
-      <img src="/IMG copy/profile-pic.png" alt="Pranav S. Patil" />
-      
+  <section id="about">
+    <br><br><br><br>
+    <div class="about-container">
+      <div>
+        <!-- Profile Image -->
+        <div class="about-img">
+          <img src="/IMG copy/profile-pic.png" alt="Pranav S. Patil" />
+
+        </div>
+        <div class="about-img-b">
+          <img src="/IMG copy/TAB-LOGO.png" alt="TAB Logo">
+        </div>
+      </div>
+
+
+
+      <!-- Text Content -->
+      <div class="home-about-text">
+        <h2>👋 About Me</h2>
+        <p>
+          💻 I'm <strong>Pranav S. Patil</strong>, a self-taught web developer with hands-on
+          experience building personal projects using Java, Node.js, and full-stack technologies. I’m passionate about
+          crafting dynamic, user-friendly applications, with strong skills in API integration, database management, and
+          version control.
+        </p>
+        <p>
+          Always eager to explore new tools, learn by doing, and turn ideas into working solutions through code and
+          collaboration. I thrive in late-night coding sessions and love solving real-world problems.
+        </p>
+        <ul>
+          <li>“The Harder You Work, The Luckier You Get”</li>
+          <li>Loves late-night debugging.</li>
+          <li>Enjoys mentoring peers & shipping fast, clean code.</li>
+        </ul>
+      </div>
     </div>
-    <div class="about-img-b">
-      <img src="/IMG copy/TAB-LOGO.png" alt="TAB Logo" >
-    </div>
-    </div>
-    
+  </section>
 
+  <style>
+    /* Overall Section Styling */
+    #about {
+      background-color: #ffffff;
+      padding: 64px 24px;
+    }
 
-    <!-- Text Content -->
-    <div class="home-about-text">
-      <h2>👋 About Me</h2>
-      <p>
-        💻 I'm <strong>Pranav S. Patil</strong>, a self-taught web developer with hands-on
-        experience building personal projects using Java, Node.js, and full-stack technologies. I’m passionate about
-        crafting dynamic, user-friendly applications, with strong skills in API integration, database management, and version control.
-      </p>
-      <p>
-        Always eager to explore new tools, learn by doing, and turn ideas into working solutions through code and
-        collaboration. I thrive in late-night coding sessions and love solving real-world problems.
-      </p>
-      <ul>
-        <li>“The Harder You Work, The Luckier You Get”</li>
-        <li>Loves late-night debugging</li>
-        <li>Enjoys mentoring peers & shipping fast, clean code</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<style>
-  /* Overall Section Styling */
-  #about {
-    background-color: #ffffff;
-    padding: 64px 24px;
-  }
-
-  /* Flex Container */
-  .about-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-  }
-
-  @media (min-width: 768px) {
+    /* Flex Container */
     .about-container {
-      flex-direction: row;
-      align-items: flex-start;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
     }
-  }
 
-  /* Profile Image */
-  .about-img {
-    width: 180px;
-    height: 180px;
-    border: 4px solid #e5e7eb;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+    @media (min-width: 768px) {
+      .about-container {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
 
-
-  .about-img-b{
-    width: 180px;
-    height: 180px;
-    /* border: 4px solid #e5e7eb; */
-    /* border-radius: 50%; */
-    overflow: hidden;
-    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
-    margin: 0px 0px 0px 30px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .about-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  @media (min-width: 768px) {
+    /* Profile Image */
     .about-img {
-      width: 240px;
-      height: 240px;
+      width: 180px;
+      height: 180px;
+      border: 4px solid #e5e7eb;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-  }
 
-  /* Text Styling */
-  .home-about-text {
-    opacity: 0;
-    animation: fadeInUp 1.5s ease-out forwards;
-    animation-delay: 0.2s;
-    max-width: 700px;
-    padding: 0 10px;
-    text-align: center;
-  }
 
-  @media (min-width: 768px) {
+    .about-img-b {
+      width: 180px;
+      height: 180px;
+      /* border: 4px solid #e5e7eb; */
+      /* border-radius: 50%; */
+      overflow: hidden;
+      /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+      margin: 0px 0px 0px 30px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .about-img {
+        width: 240px;
+        height: 240px;
+      }
+    }
+
+    /* Text Styling */
     .home-about-text {
-      text-align: left;
-    }
-  }
-
-  .home-about-text h2 {
-    color: #5a86ff;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    .home-about-text h2 {
-      font-size: 2.25rem;
-    }
-  }
-
-  .home-about-text p {
-    color: #374151;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-
-  .home-about-text p strong {
-    color: #1d4ed8;
-  }
-
-  @media (min-width: 768px) {
-    .home-about-text p {
-      font-size: 1.125rem;
-    }
-  }
-
-  .home-about-text ul {
-    color: #4b5563;
-    list-style: disc inside;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
-
-  @media (min-width: 768px) {
-    .home-about-text ul {
-      font-size: 1.125rem;
-    }
-  }
-
-  /* Animation */
-  @keyframes fadeInUp {
-    0% {
       opacity: 0;
-      transform: translateY(80px);
+      animation: fadeInUp 1.5s ease-out forwards;
+      animation-delay: 0.2s;
+      max-width: 700px;
+      padding: 0 10px;
+      text-align: center;
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
+
+    @media (min-width: 768px) {
+      .home-about-text {
+        text-align: left;
+      }
     }
-  }
-</style>
+
+    .home-about-text h2 {
+      color: #5a86ff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .home-about-text h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .home-about-text p {
+      color: #374151;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .home-about-text p strong {
+      color: #1d4ed8;
+    }
+
+    @media (min-width: 768px) {
+      .home-about-text p {
+        font-size: 1.125rem;
+      }
+    }
+
+    .home-about-text ul {
+      color: #4b5563;
+      list-style: disc inside;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (min-width: 768px) {
+      .home-about-text ul {
+        font-size: 1.125rem;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(80px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 
 
   <!-- Home Page About section E-->
@@ -654,14 +654,14 @@
       </div>
 
       <!-- Right Side Content -->
-     
-       
+
+
       <div class="w-full md:w-1/2 animate-fadeInUp animation-delay-1000">
         <h2 class="text-4xl font-bold mb-2">💼 What I do</h2>
-        <p class="text-yellow-400 font-semibold mb-6">CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK
+        <p class="text-yellow-400 font-semibold mb-6">CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK.
         </p>
 
-        <h5>My Explorers</h5>
+        <h5>My Explorers - </h5>
         <br>
         <!-- Tech Icons -->
         <div class="flex flex-wrap gap-6 text-gray-300 mb-8 text-center md:text-left">
@@ -680,7 +680,7 @@
             <span class="text-xs mt-1">VS Code</span>
           </div>
 
-              <!-- Git -->
+          <!-- Git -->
           <div class="flex flex-col items-center w-16">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-8" />
             <span class="text-xs mt-1">Git</span>
@@ -719,11 +719,11 @@
         <ul class="space-y-4 text-gray-200 text-base">
           <li class="flex items-start gap-2">
             <span class="text-yellow-400">⚡</span>
-            <span>Develop highly interactive front-end / user interfaces for web and mobile applications</span>
+            <span>Develop highly interactive front-end / user interfaces for web and mobile applications.</span>
           </li>
           <li class="flex items-start gap-2">
             <span class="text-yellow-400">⚡</span>
-            <span>Build Progressive Web Applications (PWAs) using SPA and normal stacks</span>
+            <span>Build Progressive Web Applications (PWAs) using SPA and normal stacks.</span>
           </li>
           <li class="flex items-start gap-2">
             <span class="text-yellow-400">⚡</span>
@@ -736,11 +736,12 @@
               <p class="indpoint">AWS</p>
               <p class="indpoint">Render</p>
               <p class="indpoint">DigitalOcean</p>
+              and more...
             </span>
           </li>
         </ul>
       </div>
-    
+
 
       <style>
         .indpoint {
@@ -1034,18 +1035,19 @@ l31 22 -31 18 c-20 11 -32 26 -32 39 0 45 25 45 90 -2z" />
 
 
       <style>
-        .widcards:hover{
+        .widcards:hover {
           background-color: #cedbff;
           transform: scale(1.05);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-          cursor:cell;
+          cursor: cell;
         }
 
         .widcards:hover .widcardstext {
-          color: #2563eb; /* Blue */
+          color: #2563eb;
+          /* Blue */
         }
       </style>
-  
+
 
     </section>
 
@@ -1057,59 +1059,64 @@ l31 22 -31 18 c-20 11 -32 26 -32 39 0 45 25 45 90 -2z" />
   <!-- Home Page what i do section E-->
 
 
-<!--Home Page Academics Section S-->
+  <!--Home Page Academics Section S-->
 
-<section id="academics" class="min-h-screen bg-white py-12 px-4">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">🎓 Academics</h2>
+  <section id="academics" class="min-h-screen bg-white py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">🎓 Academics</h2>
 
-    <div class="relative border-l-4 border-yellow-400 pl-6 space-y-10">
-      <!-- Entry 1 -->
-      <div class="group relative">
-        <div class="absolute -left-3 top-1 w-6 h-6 bg-yellow-400 rounded-full border-4 border-white group-hover:scale-110 transition-transform duration-300"></div>
-        <div class="bg-gray-100 p-5 rounded-lg shadow-sm group-hover:bg-yellow-50 transition duration-300">
-          <h3 class="text-xl font-semibold text-gray-800">Bachelor of Business Administration (Computer Application)</h3>
-          <p class="text-sm text-gray-600">Sinhgad College of Science, Pune</p>
-          <p class="text-sm text-gray-500">Graduated: 2024</p>
+      <div class="relative border-l-4 border-yellow-400 pl-6 space-y-10">
+        <!-- Entry 1 -->
+        <div class="group relative">
+          <div
+            class="absolute -left-3 top-1 w-6 h-6 bg-yellow-400 rounded-full border-4 border-white group-hover:scale-110 transition-transform duration-300">
+          </div>
+          <div class="bg-gray-100 p-5 rounded-lg shadow-sm group-hover:bg-yellow-50 transition duration-300">
+            <h3 class="text-xl font-semibold text-gray-800">Bachelor of Business Administration (Computer Application)
+            </h3>
+            <p class="text-sm text-gray-600">Sinhgad College of Science, Pune</p>
+            <p class="text-sm text-gray-500">Graduated: 2024</p>
+          </div>
         </div>
-      </div>
 
-      <!-- Entry 2 -->
-      <div class="group relative">
-        <div class="absolute -left-3 top-1 w-6 h-6 bg-yellow-400 rounded-full border-4 border-white group-hover:scale-110 transition-transform duration-300"></div>
-        <div class="bg-gray-100 p-5 rounded-lg shadow-sm group-hover:bg-yellow-50 transition duration-300">
-          <h3 class="text-xl font-semibold text-gray-800">XII (HSC)</h3>
-          <p class="text-sm text-gray-600">D.S. High School, Bhusawal</p>
-          <p class="text-sm text-gray-500">Completed: 2022</p>
+        <!-- Entry 2 -->
+        <div class="group relative">
+          <div
+            class="absolute -left-3 top-1 w-6 h-6 bg-yellow-400 rounded-full border-4 border-white group-hover:scale-110 transition-transform duration-300">
+          </div>
+          <div class="bg-gray-100 p-5 rounded-lg shadow-sm group-hover:bg-yellow-50 transition duration-300">
+            <h3 class="text-xl font-semibold text-gray-800">XII (HSC)</h3>
+            <p class="text-sm text-gray-600">D.S. High School, Bhusawal</p>
+            <p class="text-sm text-gray-500">Completed: 2022</p>
+          </div>
         </div>
-      </div>
 
-      <!-- Entry 3 -->
-      <div class="group relative">
-        <div class="absolute -left-3 top-1 w-6 h-6 bg-yellow-400 rounded-full border-4 border-white group-hover:scale-110 transition-transform duration-300"></div>
-        <div class="bg-gray-100 p-5 rounded-lg shadow-sm group-hover:bg-yellow-50 transition duration-300">
-          <h3 class="text-xl font-semibold text-gray-800">Government of Industrial Training Institute</h3>
-          <p class="text-sm text-gray-600">GOVT. ITI, Bhusawal</p>
-          <p class="text-sm text-gray-500">Completed: 2021</p>
+        <!-- Entry 3 -->
+        <div class="group relative">
+          <div
+            class="absolute -left-3 top-1 w-6 h-6 bg-yellow-400 rounded-full border-4 border-white group-hover:scale-110 transition-transform duration-300">
+          </div>
+          <div class="bg-gray-100 p-5 rounded-lg shadow-sm group-hover:bg-yellow-50 transition duration-300">
+            <h3 class="text-xl font-semibold text-gray-800">Government of Industrial Training Institute</h3>
+            <p class="text-sm text-gray-600">GOVT. ITI, Bhusawal</p>
+            <p class="text-sm text-gray-500">Completed: 2021</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Home Page Academics Section E-->
-
+  <!-- Home Page Academics Section E-->
 
 
 
 
 
-<!-- Home page Position of Responsibility, Achievements & Interests section S -->
 
+<!-- Responsibilities & Achievements Section -->
 <section class="min-h-screen bg-white py-20 px-6">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl font-bold text-center text-gray-900 mb-16 tracking-tight">Responsibilities & Achievements</h2>
-
     <div class="grid md:grid-cols-3 gap-10">
 
       <!-- SCOS Card -->
@@ -1121,7 +1128,7 @@ l31 22 -31 18 c-20 11 -32 26 -32 39 0 45 25 45 90 -2z" />
         <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm leading-relaxed">
           <li>Conducted web dev workshops for 180+ students.</li>
           <li>Spoke on service vs product-based tech firms.</li>
-          <li>Coordinated guests & managed a event</li>
+          <li>Coordinated guests & managed an event.</li>
         </ul>
       </div>
 
@@ -1135,7 +1142,7 @@ l31 22 -31 18 c-20 11 -32 26 -32 39 0 45 25 45 90 -2z" />
           <li>Contributed to open-source repositories.</li>
           <li>Organized technical workshops and seminars.</li>
           <li>Led successful project/event teams.</li>
-          <li> <b>NSS volunteer</b> in social service initiatives.</li>
+          <li><b>NSS volunteer</b> in social service initiatives.</li>
         </ul>
       </div>
 
@@ -1151,31 +1158,147 @@ l31 22 -31 18 c-20 11 -32 26 -32 39 0 45 25 45 90 -2z" />
         </ul>
       </div>
 
-
-       <!-- Event Management Card -->
       <!-- Event Management Card -->
-<div class="group bg-gradient-to-br from-pink-50 to-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-pink-100">
-  <div class="flex items-center gap-3 mb-4">
-    <div class="text-pink-600 text-2xl"><i class="fas fa-calendar-check"></i></div>
-    <h3 class="text-xl font-semibold text-pink-700">Event Management & Planning</h3>
-  </div>
-  <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm leading-relaxed">
-    <li>Successfully managed weddings, corporate meets, concerts, and college festivals.</li>
-    <li>Handled end-to-end logistics, budgeting, and on-ground coordination.</li>
-    <li>Led client interactions, vendor negotiations, and execution teams.</li>
-    <li>Delivered memorable experiences with a focus on quality and time management.</li>
-  </ul>
-</div>
-
-
+      <div class="group bg-gradient-to-br from-pink-50 to-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-pink-100">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="text-pink-600 text-2xl"><i class="fas fa-calendar-check"></i></div>
+          <h3 class="text-xl font-semibold text-pink-700">Event Management & Planning</h3>
+        </div>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm leading-relaxed">
+          <li>Successfully managed weddings, corporate meets, concerts, and college festivals.</li>
+          <li>Handled end-to-end logistics, budgeting, and on-ground coordination.</li>
+          <li>Led client interactions, vendor negotiations, and execution teams.</li>
+          <li>Delivered memorable experiences with a focus on quality and time management.</li>
+        </ul>
+      </div>
 
     </div>
   </div>
 </section>
 
+<!-- Certificate Section -->
+<section id="certificates" class="certificate-section">
+  <h2 class="section-title">📜 My Certificates</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide cert-card">
+        <img src="/Cert/cert1.png" alt="NSS 1" />
+        <h3>National Service Scheme (NSS)</h3>
+        <p>Issued by SCOS-SPPU - June 2024</p>
+      </div>
+      <div class="swiper-slide cert-card">
+        <img src="/Cert/cert2.png" alt="Advanced DSA With Java 2" />
+        <h3>Advanced DSA With Java</h3>
+        <p>Issued by Apna College - May 2024</p>
+      </div>
+      <div class="swiper-slide cert-card">
+        <img src="/Cert/cert2.png" alt="full Stack Web Devlopment in MERN 3" />
+        <h3>Fake Ignore It</h3>
+        <p>Issued by Apna College - May 2025</p>
+      </div>
+       <div class="swiper-slide cert-card">
+        <img src="/Cert/cert2.png" alt="full Stack Web Devlopment in MERN 3" />
+        <h3>Fake Ignore It</h3>
+        <p>Issued by Apna College - May 2025</p>
+      </div>
+    
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- Swiper Style + Script -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', swp);
+
+  function swp() {
+    new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  }
 
 
+</script>
 
+<!-- Custom Certificate CSS -->
+<style>
+  .certificate-section {
+    background: linear-gradient(to right, #eef2ff, #fdfbff);
+    padding: 60px 20px;
+    text-align: center;
+  }
 
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+  }
 
-<!-- Home page Position of Responsibility, Achievements & Interests section  -->
+  .swiper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 40px;
+  }
+
+  .cert-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .cert-card:hover {
+    transform: scale(1.03);
+  }
+
+  .cert-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+
+  .cert-card h3 {
+    font-size: 1.2rem;
+    color: #222;
+  }
+
+  .cert-card p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .swiper-pagination-bullet {
+    background: #4f46e5;
+    opacity: 0.7;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #1e3a8a;
+  }
+</style>
+>

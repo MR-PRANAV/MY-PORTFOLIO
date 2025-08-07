@@ -59,9 +59,10 @@ function isAdmin(req, res, next) {
 }
 
 app.get("/", (req, res) => {
-//   res.send("Hello, World!");
+        // res.render("track.ejs");
         res.render("index");
 });
+
 
 // about
 app.get("/about", (req, res) => {
